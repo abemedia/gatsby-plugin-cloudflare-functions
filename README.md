@@ -18,10 +18,15 @@ module.exports = {
 }
 ```
 
-It will automatically pick up the configuration from your `wrangler.toml` file.
+The plugin uses [wrangler](https://www.npmjs.com/package/wrangler) to run your functions which
+automatically pick configuration from a `wrangler.toml` or `wrangler.json` file and
+variables/secrets from a `.dev.vars` file.  
+It is recommended to add `.wrangler/` to your `.gitignore` file to avoid committing the temporary
+files that wrangler creates.
 
 if you don't use a `wrangler.toml` file to configure Cloudflare Pages you can also configure the
-plugin via plugin options. Bindings defined here take precedence over those in your `wrangler.toml`.
+plugin via plugin options. Bindings defined here take precedence over those in a `wrangler.toml`
+file.
 
 See the example below which includes all available plugin options.
 
@@ -63,8 +68,7 @@ See <https://developers.cloudflare.com/workers/configuration/compatibility-flags
 ### `binding`
 
 Bind environment variables or secrets.  
-See <https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/> for information
-on how to load environment variables from a dotenv file.
+Alternatively these can be specified in a file called `.dev.vars` in dotenv format.
 
 ### `kv`
 
