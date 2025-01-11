@@ -1,0 +1,49 @@
+{
+  "name": "gatsby-plugin-cloudflare-functions",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "gatsby-node.js",
+  "module": "gatsby-node.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abemedia/gatsby-plugin-cloudflare-functions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abemedia/gatsby-plugin-cloudflare-functions/issues"
+  },
+  "homepage": "https://github.com/abemedia/gatsby-plugin-cloudflare-functions#readme",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "cloudflare"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint --cache --cache-file=node_modules/.cache/.eslintcache --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx ./"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --cache --write",
+    "*.{js,jsx,ts,tsx}": "eslint --cache --cache-file=node_modules/.cache/.eslintcache --fix"
+  },
+  "dependencies": {
+    "wrangler": "^3.101.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/eslint-parser": "^7.26.5",
+    "@babel/preset-env": "^7.26.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.25.2",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2"
+  },
+  "peerDependencies": {
+    "express-http-proxy": "1.x",
+    "gatsby": "5.x",
+    "typescript": "5.x"
+  }
+}
