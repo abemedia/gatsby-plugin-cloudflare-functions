@@ -27,6 +27,7 @@
     "*.{js,jsx,ts,tsx}": "eslint --cache --cache-file=node_modules/.cache/.eslintcache --fix"
   },
   "dependencies": {
+    "fast-glob": "^3.3.3",
     "wrangler": "^3.101.0"
   },
   "devDependencies": {

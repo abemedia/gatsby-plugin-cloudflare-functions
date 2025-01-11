@@ -1,19 +1,15 @@
 import { spawn } from 'node:child_process'
-import { glob as fsglob, readFileSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { promisify } from 'node:util'
 import proxy from 'express-http-proxy'
+import glob from 'fast-glob'
 import ts from 'typescript'
-
-const glob = promisify(fsglob)
 
 const functionsDir = './functions'
 const wranglerProcessStartTimeout = 10_000
 
-const wranglerBinaryPath = fileURLToPath(
-  new URL('node_modules/wrangler/bin/wrangler.js', import.meta.url)
-)
+const wranglerBinaryPath = fileURLToPath(new URL('../wrangler/bin/wrangler.js', import.meta.url))
 
 // See https://developers.cloudflare.com/pages/functions/api-reference/#methods
 const pagesFunctionMethods = {
