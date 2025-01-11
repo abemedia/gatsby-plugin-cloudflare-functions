@@ -12,7 +12,7 @@
     "*.{js,jsx,ts,tsx}": "eslint --cache --cache-file=node_modules/.cache/.eslintcache --fix"
   },
   "dependencies": {
-    "wrangler": "^3.86.0"
+    "wrangler": "^3.101.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
