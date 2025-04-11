@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/compare/v1.0.1...v1.0.2) (2025-04-11)
+
+
+### Miscellaneous Chores
+
+* release 1.0.2 ([c0e1b1c](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/commit/c0e1b1cca60f32bb6fdeb454300adbc5a638f9a1))
+
 ## [1.0.1](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/compare/v1.0.0...v1.0.1) (2025-01-11)
 
 
