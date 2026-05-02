@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "fast-glob": "^3.3.3",
-    "wrangler": "^4.79.0"
+    "wrangler": "^4.87.0"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
