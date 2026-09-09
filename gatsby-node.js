@@ -35,11 +35,13 @@ function wranglerArgs(options) {
     if (typeof value === 'boolean' && value) {
       args.push(`--${arg}`)
     } else if (Array.isArray(value)) {
-      value.forEach(item => args.push(`--${arg}=${item}`))
+      value.forEach((item) => {
+        args.push(`--${arg}=${item}`)
+      })
     } else if (typeof value === 'object') {
-      Object.entries(value).forEach(([subKey, subValue]) =>
+      Object.entries(value).forEach(([subKey, subValue]) => {
         args.push(`--${arg}=${subKey}=${subValue}`)
-      )
+      })
     } else if (value) {
       args.push(`--${arg}=${value}`)
     }
@@ -64,15 +66,15 @@ async function spawnWranglerPagesDev(options) {
       stdio: ['pipe', 'pipe', 'pipe', 'ipc'],
     })
 
-    wrangler.on('message', message => {
+    wrangler.on('message', (message) => {
       if (!wranglerHasStarted) {
         wranglerHasStarted = true
         const parsedMessage = JSON.parse(message.toString())
         resolve(`http://${parsedMessage.ip}:${parsedMessage.port}`)
       }
     })
-    wrangler.stdout?.on('data', data => console.log(data.toString()))
-    wrangler.stderr?.on('data', data => console.log(data.toString()))
+    wrangler.stdout?.on('data', (data) => console.log(data.toString()))
+    wrangler.stderr?.on('data', (data) => console.log(data.toString()))
 
     // Cleanup when the process exits
     process.on('exit', () => wrangler.kill())
@@ -106,7 +108,7 @@ function getExportsForSourceFile(fileName) {
         const name = parent.name.getText()
         allExports.push(name)
       } else if (ts.isVariableStatement(parent)) {
-        parent.declarationList.declarations.forEach(declaration => {
+        parent.declarationList.declarations.forEach((declaration) => {
           const name = declaration.name.getText()
           allExports.push(name)
         })
@@ -120,7 +122,7 @@ function getExportsForSourceFile(fileName) {
     fileName,
     readFileSync(fileName).toString(),
     ts.ScriptTarget.ES2015,
-    /* setParentNodes */ true
+    /* setParentNodes */ true,
   )
 
   visitNode(sourceFile)
@@ -185,13 +187,13 @@ export const onCreateDevServer = async ({ app }, pluginOptions) => {
     const isLog = ['debug', 'info', 'log'].includes(pluginOptions.logLevel)
 
     await Promise.all(
-      files.map(async file => {
+      files.map(async (file) => {
         // Skip middleware.
         if (path.parse(file).name === '_middleware') return
 
         const exports = getExportsForSourceFile(file)
         const allMethods = exports.includes('onRequest')
-        const methods = new Set(exports.map(name => pagesFunctionMethods[name]).filter(Boolean))
+        const methods = new Set(exports.map((name) => pagesFunctionMethods[name]).filter(Boolean))
 
         // Skip if the function does not have onRequest or onRequest* methods.
         if (!allMethods && !methods.size) return
@@ -205,13 +207,13 @@ export const onCreateDevServer = async ({ app }, pluginOptions) => {
           .replace(/\/index$/, '')}`
 
         const options = {
-          proxyReqPathResolver: req => req.originalUrl,
-          filter: req => allMethods || methods.has(req.method),
+          proxyReqPathResolver: (req) => req.originalUrl,
+          filter: (req) => allMethods || methods.has(req.method),
         }
 
         app.use(routePath, proxy(url, options))
         if (isLog) console.log(`Proxying Cloudflare function at ${routePath}`)
-      })
+      }),
     )
     if (isLog) console.log('')
   } catch (error) {

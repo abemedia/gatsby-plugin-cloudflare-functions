@@ -19,32 +19,20 @@
     "cloudflare"
   ],
   "scripts": {
-    "prepare": "husky",
-    "lint": "eslint --cache --cache-file=node_modules/.cache/.eslintcache --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx ./"
-  },
-  "lint-staged": {
-    "*": "prettier --ignore-unknown --cache --write",
-    "*.{js,jsx,ts,tsx}": "eslint --cache --cache-file=node_modules/.cache/.eslintcache --fix"
+    "prepare": "stagelint init",
+    "lint": "biome check ."
   },
   "dependencies": {
-    "fast-glob": "^3.3.3",
-    "wrangler": "^4.127.1"
+    "express-http-proxy": "^1.6.3",
+    "fast-glob": "^3.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
-    "@babel/eslint-parser": "^7.29.7",
-    "@babel/preset-env": "^7.29.7",
-    "eslint": "^8.2.0",
-    "eslint-config-airbnb-base": "15.0.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-import": "^2.32.0",
-    "husky": "^9.1.6",
-    "lint-staged": "^17.5.0",
-    "prettier": "^3.9.6"
+    "@biomejs/biome": "2.5.12",
+    "@stagelint/stagelint": "^0.1.5"
   },
   "peerDependencies": {
-    "express-http-proxy": "1.x",
     "gatsby": "5.x",
-    "typescript": "5.x"
+    "typescript": ">=5.0.0 <7.0.0",
+    "wrangler": "4.x"
   }
 }
