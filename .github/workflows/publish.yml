@@ -20,10 +20,7 @@ jobs:
           node-version: '22.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Generate archive
-        run: yarn pack --filename package.tgz
-
       - name: Publish
-        run: npm publish package.tgz --provenance --access public
+        run: npm publish --ignore-scripts --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
