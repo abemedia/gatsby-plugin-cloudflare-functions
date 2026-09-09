@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/compare/v1.0.2...v1.0.3) (2026-09-09)
+
+
+### Bug Fixes
+
+* **deps:** correct dependency scopes, migrate tooling ([#203](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/issues/203)) ([d39aebe](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/commit/d39aebe6c3338c6c8c9aced22ad39da738e3ec2c))
+
 ## [1.0.2](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/compare/v1.0.1...v1.0.2) (2025-04-11)
 
 
