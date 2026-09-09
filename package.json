@@ -23,7 +23,7 @@
     "lint": "biome check ."
   },
   "dependencies": {
-    "express-http-proxy": "^1.6.3",
+    "express-http-proxy": "^2.1.2",
     "fast-glob": "^3.3.3"
   },
   "devDependencies": {
