@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": ["**", "!CHANGELOG.md"]
+  },
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -13,6 +16,16 @@
     "formatter": {
       "quoteStyle": "single",
       "semicolons": "asNeeded"
+    }
+  },
+  "markdown": {
+    "formatter": {
+      "proseWrap": "always"
+    }
+  },
+  "yaml": {
+    "formatter": {
+      "quoteStyle": "single"
     }
   }
 }
