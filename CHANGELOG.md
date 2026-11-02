@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/compare/v1.0.3...v1.0.4) (2026-11-02)
+
+
+### Bug Fixes
+
+* **ci:** publish with node 24 so --ignore-scripts skips prepare ([#231](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/issues/231)) ([2bbdf41](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/commit/2bbdf41ba81fc8fc047221c389968c01e89fc5e8))
+
 ## [1.0.3](https://github.com/abemedia/gatsby-plugin-cloudflare-functions/compare/v1.0.2...v1.0.3) (2026-09-09)
 
 
