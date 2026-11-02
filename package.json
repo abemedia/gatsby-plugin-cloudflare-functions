@@ -27,7 +27,7 @@
     "fast-glob": "^3.3.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.14",
+    "@biomejs/biome": "2.6.4",
     "@stagelint/stagelint": "^0.2.2"
   },
   "peerDependencies": {
